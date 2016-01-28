@@ -15,3 +15,4 @@ Constraints
 2≤N≤200000
 −107≤ai≤107
 ai≠aj,where 1≤i<j≤N
+
