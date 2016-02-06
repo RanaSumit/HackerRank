@@ -8,29 +8,40 @@ public class Main {
 
         int length = new Scanner(System.in).nextInt();
         int x,y,z;
+        String str;
         String arr[] = new String[length];
+        String result[] = new String[length];
         for(int  i = 0; i < length; i++)
         {
-            x = new Scanner(System.in).nextInt();
-            y =  new Scanner(System.in).nextInt();
-            z = new Scanner(System.in).nextInt();
-            if(x == y && x == z)
+            str = new Scanner(System.in).nextLine();
+            arr = str.split(" ");
+            x = Integer.parseInt(arr[0]);
+            y = Integer.parseInt(arr[1]);
+            z = Integer.parseInt(arr[2]);
+            if(x + y > z && y + z > x && x + z > y)
             {
-                arr[i] = "Equilateral";
-            }
-            else if(x == y || x == z || y == z)
-            {
-                arr[i] = "Isosceles";
+                if(x == y && x == z)
+                {
+                    result[i] = "Equilateral";
+                }
+                else
+                if(x == y || x == z || y == z)
+                {
+                    result[i] = "Isosceles";
+                }
+                else
+                {
+                    result[i] = "Scalene";
+                }
             }
             else
             {
-                arr[i] = "None";
+                result[i] = "Not a Triangle";
             }
-
         }
         for(int i = 0; i < length; i++)
         {
-            System.out.println(arr[i]);
+            System.out.println(result[i]);
         }
     }
 }
