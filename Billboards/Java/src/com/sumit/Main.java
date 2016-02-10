@@ -20,10 +20,9 @@ public class Main {
         {
             list.add(arr[i]);
         }
-
         for(int i = 0; i < K; i++)
         {
-            list.remove(i);
+            list.remove(0);
 
         }
         int sum = 0;
