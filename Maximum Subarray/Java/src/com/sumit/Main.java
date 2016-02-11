@@ -18,47 +18,66 @@ public class Main {
             {
                 elements[j] = scan.nextInt();
             }
-            contigous(elements, size);
-            nonContigous(elements, size);
+            contiguous(elements, size);
+            nonContiguous(elements, size);
         }
     }
-    public static void contigous(int[] elements, int size)
+    public static void contiguous(int[] elements, int size)
     {
-        List<Integer> result = new ArrayList<Integer>();
-        int maxEnd = 0, maxSoFar= 0;
-        for(int i = 0; i < size; i++)
+
+        int maxsum = 0;
+        int sum = 0;
+        for (int i = 0; i < elements.length; i++)
         {
-            maxEnd = Math.max(0, maxEnd + elements[i]);
-            maxSoFar = Math.max(maxSoFar, maxEnd);
+            sum += elements[i];
+            if (maxsum < sum)
+            {
+                maxsum = sum;
+            }
+            else if(sum < 0)
+            {
+                sum = 0;
+            }
 
         }
-
-        System.out.print(maxSoFar+ " ");
+        if(maxsum == 0)
+        {
+            for(int i = 0; i < size; i++)
+            {
+                if(elements[i] < 0)
+                {
+                    if(elements[i] > maxsum || maxsum == 0)
+                    {
+                        maxsum = elements[i];
+                    }
+                }
+            }
+        }
+        System.out.print(maxsum+ " ");
 
     }
-    public static void nonContigous(int[] a, int size)
+    public static void nonContiguous(int[] elements, int size)
     {
-
-
-        int sum0=0; //will hold the sum till i-2
-        int sum1=0;//will hold the sum till i-1
-        for(int k : a){
-            int x=Math.max(sum0+k, sum1);//max(sum till (i-2)+a[i], sum till (i-1))
-            sum0=sum1;
-            sum1=x;
-        }
-
-        /*List<Integer> result = new ArrayList<Integer>();
-        int sum1 = elements[0];
-        int maxSoFar = elements[0];
-        int sum2 = 0;
+        int result = 0;
         for(int i = 0; i < size; i++)
         {
-            maxSoFar = Math.max(sum2 + elements[i], sum1);
-            sum2 = sum1;
-            sum1 = maxSoFar;
-        }*/
-        System.out.print(sum1);
+            if(elements[i] > 0)
+                result = result + elements[i];
+        }
+        if(result == 0)
+        {
+            for(int i = 0; i < size; i++)
+            {
+                if(elements[i] < 0)
+                {
+                    if(elements[i] > result || result == 0)
+                    {
+                        result = elements[i];
+                    }
+                }
+            }
+        }
+        System.out.print(result);
         System.out.println();
     }
 }
