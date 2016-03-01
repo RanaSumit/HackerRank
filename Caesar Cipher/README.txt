@@ -30,8 +30,8 @@ Explanation
 Each unencrypted letter is replaced with the letter occurring KK spaces after it when listed alphabetically. Think of the alphabet as being both case-sensitive and circular; if KK rotates past the end of the alphabet, it loops back to the beginning (i.e.: the letter after zz is aa, and the letter after ZZ is AA).
 
 Selected Examples: 
-mm (ASCII 109) becomes oo (ASCII 111). 
-ii (ASCII 105) becomes kk (ASCII 107). 
-−− remains the same, as symbols are not encoded. 
-OO (ASCII 79) becomes QQ (ASCII 81). 
-zz (ASCII 122) becomes bb (ASCII 98); because zz is the last letter of the alphabet, aa (ASCII 97) is the next letter after it in lower-case rotation.
+m (ASCII 109) becomes o (ASCII 111). 
+i (ASCII 105) becomes k (ASCII 107). 
+− remains the same, as symbols are not encoded. 
+O (ASCII 79) becomes Q (ASCII 81). 
+z (ASCII 122) becomes b (ASCII 98); because zz is the last letter of the alphabet, aa (ASCII 97) is the next letter after it in lower-case rotation.
