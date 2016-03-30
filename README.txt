@@ -1,1 +1,0 @@
-Hacker Rank  Problem Solutions.
